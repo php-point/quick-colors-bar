@@ -25,7 +25,7 @@ A VS Code extension that provides a Quick Color Palette for VS Code with copy-to
 - View ID: `colorPalette.view`
 
 ## Links
-- [GitHub Repository]()
+- [GitHub Repository](https://github.com/php-point/quick-colors-bar.git)
 
 
 ## License
