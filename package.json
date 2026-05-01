@@ -1,0 +1,74 @@
+{
+  "name": "quick-color-palette",
+  "displayName": "Quick Color Palette",
+  "description": "Beautiful quick color palette with copy functionality",
+  "version": "1.0.1",
+  "icon": "icon.png",
+  "publisher": "phppoint",
+  "author": {
+    "name": "Sanjay Saini",
+    "email": "mail.phppoint@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url":"https://github.com/php-point/quick-colors-bar.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:color-palette.togglePanel",
+    "onView:colorPalette.view"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "color-palette.togglePanel",
+        "title": "Show quick color palette",
+        "category": "Colors"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "color-palette-container",
+          "title": "Color Palette",
+          "icon": "$(color-mode)"
+        }
+      ]
+    },
+    "views": {
+      "color-palette-container": [
+        {
+          "type": "webview",
+          "id": "colorPalette.view",
+          "name": "Color Palette",
+          "icon": "$(paintcan)"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "color-palette.togglePanel",
+        "key": "ctrl+shift+p",
+        "mac": "cmd+shift+p",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "20.x",
+    "typescript": "^5.3.0"
+  }
+}
